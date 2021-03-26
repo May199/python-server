@@ -5,8 +5,8 @@
 - [x] Criar um server Python
 - [x] Fazer o server retornar uma página Web
 - [x] Criar requisições GET
-- [] Criar requisições POST 
-- [] Criar conexões entre cliente/servidor
+- [ ] Criar requisições POST 
+- [ ] Criar conexões entre cliente/servidor
 
 ### Como rodar o projeto
     
