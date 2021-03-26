@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <title>Unifor | Universidade de Fortaleza</title>
+    <link rel="icon" type="image/png" href="http://localhost:3000/img/unifor.png"/>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+          <a class="navbar-brand" href="https://www.unifor.br/"><img id="logo" src="img/unifor-logo-horizontal.png"></a>
+          <div class="collapse navbar-collapse justify-content-end" id="menu">
+            <ul class="navbar-nav">
+
+              <li class="nav-item"><a class="nav-link text-dark" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link text-dark" href="#cursos">Cursos</a></li>
+              <li class="nav-item"><a class="nav-link text-dark" href="#matriculas">Matrículas</a></li>
+              <li class="nav-item"><a class="nav-link text-dark" href="#eventos">Eventos</a></li>
+              <li class="nav-item"><a class="nav-link text-dark" href="#telefone">Telefones</a></li>
+              <li class="nav-item"><a class="nav-link text-dark" href="#contato">Contato</a></li>
+
+            </ul>
+          </div>
+        </nav>
+
+    </div>
+    <div id="conteudo">
+        <br/>
+        <h2>Locais Interessantes no Campus Unifor</h2>
+        <br/>
+      <div class="row">  
+          <div class="col-4">
+              <div class="card">
+                  <img class="card-img-top" src="img/unifor frente.png" alt="Imagem de capa do card">
+                  <div class="card-body">
+                      <p class="card-text">Centro de Convivencia, conta com Videoteca e Praça de Alimentação.</p>
+                  </div>
+              </div>    
+          </div>
+          <div class="col-4">
+              <div class="card">
+                  <img class="card-img-top" src="img/biblioteca.jpg" alt="Imagem de capa do card">
+                  <div class="card-body">
+                       <p class="card-text">
+                          A Biblioteca da Unifor encontra-se com mais de 102 mil títulos, 
+                          em um total de mais de 297 mil documentos/obras nas áreas de ciências jurídicas, 
+                          tecnológicas, da saúde, da comunicação e gestão.
+                        </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="img/teatro.jpg" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <p class="card-text">
+                        O Teatro Celina Queiroz é um dos mais importantes palcos do Ceará. 
+                        Reconhecido espaço de divulgação das artes cênicas no estado, tem capacidade para mais de 300 pessoas. 
+                        Foi inaugurado em 2003 e é também palco de eventos acadêmicos da Unifor.
+                    </p>
+                </div>
+            </div>    
+        </div>
+          </div>
+          <br/>
+          <br/>
+      </div>
+      <h1>Entre em Contato com a gente :)</h1>
+      <div>
+          <form class="row row-cols-lg-auto g-1 align-items-center">
+          <div class="row g-3 align-items-center" id="contato">
+              <input type="text" class="form-control mr-sm-2" placeholder="Informe seu nome" />
+              <input type="text" class="form-control mr-sm-2" placeholder="Informe seu sobrenome" />
+              <input type="e-mail" class="form-control mr-sm-2" placeholder="Informe seu e-mail"/>
+              <input type="tel" class="form-control mr-sm-2" placeholder="informe seu telefone"/>
+              <textarea type="text" class="form-control mr-sm-2" placeholder="Descreva seu contato"></textarea>
+              <button class="btn btn-outline-primary" type="button">Enviar Contato</button>
+          </div>
+          </form>
+    </div>
+    <div id="telefone">
+        <table class="table" method="GET" action="/telefone">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Setor</th>
+                <th scope="col">Telefones</th>
+                <th scope="col">E-mail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Administrativo</td>
+                <td>(85) 30121121</td>
+                <td>adm@contato.com</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Financeiro</td>
+                <td>(85) 30122323</td>
+                <td>financeiro@contato.com</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Recursos Humanos</td>
+                <td>(85) 30121212</td>
+                <td>rh@contato.com</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+    <div id="rodape" class="bg-custom text-dark">
+        <p>Endereço: Av. Washington Soares, 1321 - Edson Queiroz<br> CEP 60811-905 - Fortaleza-CE - Brasil</p>
+    </div>
+</body>
+</html>
