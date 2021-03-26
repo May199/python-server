@@ -23,7 +23,7 @@ class WebServer:
             while True:
                 print('Aguardando conexão...')
                 # Definindo o sr para aguardar conexão, ele vai continuar ligado 
-                conn, addr = sr.accept() #Objeto/Cliente
+                conn, addr = sr.accept() 
                 req = HttpRequest(conn, addr)
                 req.start()
 
@@ -67,7 +67,7 @@ class HttpResponse:
         self.addr = addr
         self.file = file
 
-    def processRespose(self):
+    def processRespose(self): 
         self.conn.sendall(App)
         
 
