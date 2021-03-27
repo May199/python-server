@@ -46,7 +46,7 @@ class HttpRequest(Thread):
 
         self.conn.close()
 
-class App:
+class pageWeb:
 
     os.chdir('src')
     
@@ -59,7 +59,6 @@ class App:
         print("Algo deu errado!", error)
     
     http.server_close()
-
 class HttpResponse:
 
     def __init__(self, conn, addr, file):
@@ -67,8 +66,9 @@ class HttpResponse:
         self.addr = addr
         self.file = file
 
-    def processRespose(self): 
-        self.conn.sendall(App)
+    def processRespose(self):
+        self.conn.sendall(pageWeb)
+
         
 
         
