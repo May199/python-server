@@ -24,7 +24,7 @@ class Server:
                 print('received customer: ', str(date))
 
                 response = str(date)
-                server.sendto(date, addressConection)
+                server.sendto(date, addressConection) 
                 
 
 
