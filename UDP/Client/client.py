@@ -2,7 +2,6 @@ import socket
 import os
 import time
 
-
 class Client():
 
     def __init__(self, address = 'localhost', port = 3000):
@@ -41,20 +40,29 @@ class Client():
         delay = 0.004
         estimated_time = packet *(delay*1.2)
 
-        print(f'Sent {packet} packet to server')
-        print(f'Estimated time: {round(estimated_time)} seconds')
 
+        def header():
+            info = f'Sent {packet} packet to server\nEstimated time: {round(estimated_time)} seconds'
+            print(info)
 
-        for i in range(packet):
-            pk = file.read(packet_bytes)
-            server.sendall(pk)
-            sent = f' {int((i+1)*packet_kilobytes)} | {int(packet_kilobytes*packet )}kb'
-            print(sent, end='')
+            print('-----------------------------------------------------------\nSize of each package')
+            for i in range(packet):
+                pk = file.read(packet_bytes)
+                server.sendall(pk)
 
-            time.sleep(delay)
+                sent = f' {int((i+1)*packet_kilobytes)} | '
+
+                print(sent, end='')
+
+                time.sleep(delay)
+            
+            print('\nmessage sent to: ', self.address, self.port)
+
+        header()
 
         file.close()
         server.close()
+        
 if __name__ == '__main__':
     cn = Client()
     cn.connect() 

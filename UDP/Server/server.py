@@ -22,9 +22,10 @@ class Server:
 
             while True:
                 data, addressConection = server.recvfrom(1024)
-                
-                if data.decode() == "closed":
+
+                if data.decode() == 'closed':
                     break
+
                 filename = data.decode()
                 print(f'[{len(files)}] {filename}')
                 files.append(filename)
@@ -32,7 +33,7 @@ class Server:
             # Escolhendo arquivo que vou querer baixar do cliente
             fileselect = int(input('\n Which file do you want to receive?'))
             while not (0 <= fileselect < len(files)):
-                print('Opção inválida!')
+                print('invalid option!')
                 fileselect = int(input('\n Which file do you want to receive?'))
 
             server.sendto(fileselect.to_bytes(4, 'little'), addressConection) 
@@ -47,21 +48,24 @@ class Server:
             packet_kilobytes = 1024
             packet_bytes = packet_kilobytes * 8
 
-            print(f'Recebendo {packet} pacotes...')
+            print('-----------------------------------------------------------')
+            print(f'Getting {packet} packages...')
 
             start = time.time()
             for i in range(packet):
                 data = server.recv(packet_bytes)
                 file.write(data)
 
-                time_download = f'Downloading ...{round((100*(i+1))/packet, 2)}%'
+                time_download = f'Downloading ... {round((100*(i+1))/packet, 2)}%'
                 print('\r'+time_download, end='')
 
-                total_time = round(time.time()-start, 2)
-                print(f'\n Download complete: {total_time} seconds')
+            total_time = round(time.time()-start, 2)
+            print(f'\nDownload complete: {total_time} milliseconds')
+
+            print('message received from: ', str(addressConection))
         
         server.close()
-        
+
 if __name__ == '__main__':
     sr = Server()
     sr.connect() 
