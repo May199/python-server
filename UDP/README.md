@@ -16,7 +16,7 @@
 - Abra os dois Scripts em janelas diferentes do seu terminal
 
 <video align="center" width="420" height="240" controls>
-    <source src="./public/exeproject.mkv" type="video/mkv">
+    <source src="https://github.com/May199/python-server/blob/main/UDP/public/exeproject.mkv" type="video/mkv">
 </video>
 
 ### Tecnologias
