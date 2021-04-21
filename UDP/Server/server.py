@@ -1,7 +1,10 @@
 # UDP 
 # Protocolo que não se basea em uma conexão em que se manda dados sem segurança com relação ao seu ddestino. 
 import socket
+from sys import path
 import time
+import os
+
 
 class Server:
 
@@ -32,13 +35,14 @@ class Server:
                 files.append(filename)
                 
             # Escolhendo arquivo que vou querer baixar do cliente
-            fileselect = int(input('\n Which file do you want to receive?'))
+            fileselect = int(input('\n Which file do you want to receive? '))
             
             while not (0 <= fileselect < len(files)):
                 print('invalid option!')
-                fileselect = int(input('\n Which file do you want to receive?'))
-
+                fileselect = int(input('\nWhich file do you want to receive?'))
+        
             server.sendto(fileselect.to_bytes(4, 'little'), addr) 
+            
             # Recebendo numero de pacotes
             # Queremos saber em quantos pacotes o arquivo sera enviado
             conn = server.recv(4)
