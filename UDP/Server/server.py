@@ -21,26 +21,28 @@ class Server:
             files = []
 
             while True:
-                data, addressConection = server.recvfrom(1024)
+               
+                conn, addr = server.recvfrom(1024)
 
-                if data.decode() == 'closed':
+                if conn.decode() == 'closed':
                     break
 
-                filename = data.decode()
+                filename = conn.decode()
                 print(f'[{len(files)}] {filename}')
                 files.append(filename)
                 
             # Escolhendo arquivo que vou querer baixar do cliente
             fileselect = int(input('\n Which file do you want to receive?'))
+            
             while not (0 <= fileselect < len(files)):
                 print('invalid option!')
                 fileselect = int(input('\n Which file do you want to receive?'))
 
-            server.sendto(fileselect.to_bytes(4, 'little'), addressConection) 
+            server.sendto(fileselect.to_bytes(4, 'little'), addr) 
             # Recebendo numero de pacotes
             # Queremos saber em quantos pacotes o arquivo sera enviado
-            data = server.recv(4)
-            packet = int.from_bytes(data, 'little')
+            conn = server.recv(4)
+            packet = int.from_bytes(conn, 'little')
 
             # Recebendo pacotes
             server.settimeout(5)
@@ -53,8 +55,8 @@ class Server:
 
             start = time.time()
             for i in range(packet):
-                data = server.recv(packet_bytes)
-                file.write(data)
+                conn = server.recv(packet_bytes)
+                file.write(conn)
 
                 time_download = f'Downloading ... {round((100*(i+1))/packet, 2)}%'
                 print('\r'+time_download, end='')
@@ -62,7 +64,7 @@ class Server:
             total_time = round(time.time()-start, 2)
             print(f'\nDownload complete: {total_time} milliseconds')
 
-            print('message received from: ', str(addressConection))
+            print('message received from: ', str(addr))
         
         server.close()
 

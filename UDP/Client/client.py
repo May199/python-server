@@ -2,6 +2,7 @@ import socket
 import os
 import time
 
+
 class Client():
 
     def __init__(self, address = 'localhost', port = 3000):
@@ -50,13 +51,13 @@ class Client():
                 pk = file.read(packet_bytes)
                 server.sendall(pk)
 
-                sent = f' {int((i+1)*packet_kilobytes)} | '
+                sent = f'\n {i}:({int((i+1)*packet_kilobytes)})KB'
 
                 print(sent, end='')
 
                 time.sleep(delay)
             
-            print('\nmessage sent to: ', self.address, self.port)
+            print('\n message sent to: ', self.address, self.port)
 
         header()
 
