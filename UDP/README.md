@@ -10,7 +10,7 @@
     
     $ cmd.exe
     $ cd C:\Users\nomeUsuário\diretorio_do_projeto\python-server
-    $ py main.py
+    $ py server.py
     $ py client.py
 
 - Abra os dois Scripts em janelas diferentes do seu terminal
