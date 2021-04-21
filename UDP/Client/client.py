@@ -1,7 +1,6 @@
 import socket
 import time
 import os
-
 class Client():
 
     def __init__(self, address = 'localhost', port = 3000):

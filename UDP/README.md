@@ -5,6 +5,8 @@
 - [x] Criar um server Python UDP
 - [x] Criar um client Python
 - [x] Simular comunicação entre Server e Client com protocolo UDP
+- [x] Transmissão de arquivos entre cliente e servidor
+- [] especificar um caminho para um arquivo local como argumento
 
 ### Como rodar o projeto
     

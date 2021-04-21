@@ -1,10 +1,7 @@
 # UDP 
 # Protocolo que não se basea em uma conexão em que se manda dados sem segurança com relação ao seu ddestino. 
 import socket
-from sys import path
 import time
-import os
-
 
 class Server:
 
@@ -14,7 +11,6 @@ class Server:
 
     def connect(self):
         #Criando socket com o protocolo UDP utilizando 'SOCK_DGRAM'
-
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as server:
             # Bind() só recebe 1 paramentro então utilizando as (()) conseguimos burlar isso já que teoricamente é apenas 1
             server.bind((self.address, self.port))  
@@ -24,7 +20,6 @@ class Server:
             files = []
 
             while True:
-               
                 conn, addr = server.recvfrom(1024)
 
                 if conn.decode() == 'closed':
@@ -35,7 +30,7 @@ class Server:
                 files.append(filename)
                 
             # Escolhendo arquivo que vou querer baixar do cliente
-            fileselect = int(input('\n Which file do you want to receive? '))
+            fileselect = int(input('\nWhich file do you want to receive? '))
             
             while not (0 <= fileselect < len(files)):
                 print('invalid option!')
